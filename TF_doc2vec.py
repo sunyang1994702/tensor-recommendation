@@ -29,7 +29,7 @@ def tensor_fectorization(ratings, U, V, C, tensor, model, steps=1000, alpha=0.00
             sum_tensor = 0
             for t in range(len(tensor)):
                 sum_tensor += tensor[t] * U[u_index, t] * V[r_index, t] * C[s_index, t]
-            # 真实值-预测值
+            # real value-predicted value
             eijk = r - sum_tensor
             #reset the value in model from 0 to 1
             vector = value_transform(model[re_index])
@@ -73,52 +73,6 @@ def prediction_matrix(U, V, C, tensor):
 
     return X_prediction
 
-
-if __name__ == '__main__':
-    K = 30
-    file = "../file_package/RichmondHill_filtered.txt"
-    file_LDA = "LDA_Topic_File/RichmondHill_doc_topics_" + str(K) + ".txt"
-    rating_list, user_index, restaurant_index, season_index, reveiw_index = reconstruct_rating(file)
-    print(rating_list)
-
-    """
-    X = [[[0, 0, 1, 0], [4, 0, 0, 0], [3, 0, 0, 0], [0, 4, 0, 0], [0, 0, 3, 1]],
-         [[0, 0, 1, 0], [0, 2, 0, 0], [3, 1, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]],
-         [[1, 0, 2, 0], [0, 5, 4, 0], [0, 0, 0, 4], [0, 0, 0, 0], [2, 2, 0, 0]]]
-    X = np.array(X)
-
-    print(X)
-
-    tensor = np.random.normal(scale=1/K, size=K)
-    #size of U 171*K
-    U = np.random.normal(scale=1/K, size=(len(user_index), K))
-    #size of V 122*K
-    V = np.random.normal(scale=1/K, size=(len(restaurant_index), K))
-    #size of C 4*K
-    C = np.random.normal(scale=1/K, size=(len(season_index), K))
-
-
-    tensor = [0.001] * K
-    U = [[0.001] * K for i in range(len(user_index))]
-    U = np.array(U)
-    V = [[0.001] * K for i in range(len(restaurant_index))]
-    V = np.array(V)
-    C = [[0.001] * K for i in range(len(season_index))]
-    C = np.array(C)
-
-
-    tensor = [random.uniform(0.1, 0.9) for rand in range(K)]
-    U = np.random.rand(len(user_index), K)
-    V = np.random.rand(len(restaurant_index), K)
-    C = np.random.rand(len(season_index), K)
-
-
-    U, V, C, tensor = tensor_fectorization(rating_list, U, V, C, tensor, doc_topics)
-
-    X_prediction = prediction_matrix(U, V, C, tensor)
-
-    print(X_prediction)
-    """
 
 
 
