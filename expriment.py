@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 import random
+import TF, TF_LDA, TF_doc2vec
 
 
 def calculate_MAE_RMSE(prediction_TF, prediction_TFLDA, rediction_TFD2V, test):
@@ -68,8 +69,8 @@ for K in K_list:
         U_TF = np.random.rand(len(user_index), K)
         V_TF = np.random.rand(len(restaurant_index), K)
         C_TF = np.random.rand(len(season_index), K)
-        TF_U, TF_V, TF_C, TF_tensor = tensorFactorization1.tensor_fectorization(train, U_TF, V_TF, C_TF, tensor_TF)
-        prediction_TF = tensorFactorization1.prediction_matrix(TF_U, TF_V, TF_C, TF_tensor)
+        TF_U, TF_V, TF_C, TF_tensor = TF.tensor_fectorization(train, U_TF, V_TF, C_TF, tensor_TF)
+        prediction_TF = TF.prediction_matrix(TF_U, TF_V, TF_C, TF_tensor)
         print("the time of training for TF method is :{}".format(i))
         print(prediction_TF)
         
@@ -78,8 +79,8 @@ for K in K_list:
         U_TFLDA = np.random.rand(len(user_index), K)
         V_TFLDA = np.random.rand(len(restaurant_index), K)
         C_TFLDA = np.random.rand(len(season_index), K)
-        TF_LDA_U, TF_LDA_V, TF_LDA_C, TF_LDA_tensor = tensorFactorization_LDA.tensor_fectorization(train, U_TFLDA, V_TFLDA, C_TFLDA, tensor_TFLDA, doc_topics)
-        prediction_TFLDA = tensorFactorization_LDA.prediction_matrix(TF_LDA_U, TF_LDA_V, TF_LDA_C, TF_LDA_tensor)
+        TF_LDA_U, TF_LDA_V, TF_LDA_C, TF_LDA_tensor = TF_LDA.tensor_fectorization(train, U_TFLDA, V_TFLDA, C_TFLDA, tensor_TFLDA, doc_topics)
+        prediction_TFLDA = TF_LDA.prediction_matrix(TF_LDA_U, TF_LDA_V, TF_LDA_C, TF_LDA_tensor)
         print("the time of training for TF_LDA method is :{}".format(i))
         print(prediction_TFLDA)
 
