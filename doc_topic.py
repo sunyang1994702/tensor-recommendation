@@ -66,7 +66,6 @@ def save_LDA_topic_words(file_topic_words, total_topics, feature_names, weights,
 
     myfile.close()
     
-
 def save_LDA_doc_topics(file_doc_topics, doc_topics):
     myfile = open(file_doc_topics, 'w+')
     for doc_index, topics in enumerate(doc_topics):
