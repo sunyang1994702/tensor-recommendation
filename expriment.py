@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import random
 import TF, TF_LDA, TF_doc2vec
+import doc_topic, doc2vec_model
 
 
 def calculate_MAE_RMSE(prediction_TF, prediction_TFLDA, rediction_TFD2V, test):
