@@ -16,7 +16,7 @@ def tensor_fectorization(ratings, U, V, C, tensor, doc_topics, steps=1000, alpha
             sum_tensor = 0
             for t in range(len(tensor)):
                 sum_tensor += tensor[t] * U[u_index, t] * V[r_index, t] * C[s_index, t]
-            # 真实值-预测值
+            # Real value- predicted value
             eijk = r - sum_tensor
 
             for t in range(len(tensor)):
