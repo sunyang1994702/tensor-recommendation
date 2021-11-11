@@ -6,6 +6,8 @@ On the basis of Matrix Factorization, I tried to use Tensor Factorization to ach
 
 This project was based on Python3 with using Yelp dataset:https://www.yelp.com/dataset/challenge
 
+At here, I only uploaded the data from Richmondhold city. 
+
 First of all, 
   using the normalization.py file to proccess the user's reviews. skipping the punctuation, stopwords and some useless words. and output in the form of arrays.
 
