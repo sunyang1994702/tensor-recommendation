@@ -12,9 +12,9 @@ First of all,
   using the normalization.py file to proccess the user's reviews. skipping the punctuation, stopwords and some useless words. and output in the form of arrays.
 
 Secondlly,
-  implementing TF, TF_LDA and TF_Doc2Vec method. I used two methods LDA and Doc2Vec to vectorize user's reviews.
+  Compiled experiment.py to implement TF, TF_LDA and TF_Doc2Vec method. I used two methods LDA and Doc2Vec to vectorize user's reviews.
   
-finally, 
-  compare the result about this three method. comparing the most basic TF method. the tensor that used LDA and Doc2Vec improved significantly. it can be improved by 5-8% according to the index of RMSE and MAE
+Finally, 
+  comparing the result about this three method. comparing the most basic TF method. the tensor that used LDA and Doc2Vec improved significantly. it can be improved by 5-8% according to the index of RMSE and MAE. The specific results was noted at paper. 
 
 
