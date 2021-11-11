@@ -1,7 +1,7 @@
 # tensor-recommendation
 Using tensor factorization to improve user's rating for item
 
-My project was using tensor factorization method to predict potential ratings of user for some item. This method gets the inspiration from this paper "Rating prediction with topic Gradient Descent.pdf". 
+My project was using tensor factorization method to predict potential ratings of user for some item. This method gets the inspiration from this paper [Rating prediction with topic Gradient Descent](https://github.com/sunyang1994702/tensor-recommendation/blob/master/Rating%20prediction%20with%20topic%20Gradient%20Descent.pdf). 
 On the basis of Matrix Factorization, I tried to use Tensor Factorization to achive rating prediction and improve the accuracy according to the index of RMSE and MAE.
 
 This project was based on Python3 with using Yelp dataset:https://www.yelp.com/dataset/challenge
